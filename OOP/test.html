@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>test</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .container{
+            border: solid black;
+            background-color: bisque;
+            height: 500px;
+            width: 500px;
+        }
+        .outer{
+            border: solid red;
+            background-color: orange;
+            height: 300px;
+            width: 300px;
+            margin: 90px;
+        }
+        .inner{
+            border: solid green ;
+            background-color: olive;
+            height: 100px;
+            width: 100px;
+            margin: 90px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var div1=document.getElementById("div1");
+        var div2=document.getElementById("div2");
+        var div3=document.getElementById("div3");
+        // function myFunDiv1(){
+        //     $("#div2").hide();
+        //     $("#div3").hide();
+
+        // }
+        // function myFunDiv2(){
+        //     // $("#div1").hide();
+        //     // $("#div3").hide();
+        //     $this.show();
+        //     $("#div1").hide();
+        // }
+        // function myFunDiv3(){
+        //     $("#div2").hide();
+        //     $("#div1").hide();
+        // }
+    $(document).ready(function(){
+        $("#div1").click(function(e) {
+            var div1 = $(this).attr('class');
+            $("#div2").hide();
+            $("#div3").hide();
+            div1.show();
+            e.stopPropagation();
+        });
+        $("#div2").click(function(e) {
+            var div2 = $(this).attr('class');
+            $("#div1").hide();
+            $("#div3").hide();
+            div2.show();
+            e.stopPropagation();
+        });
+    });
+
+    </script>
+</head>
+<body>
+    <div class="container" id="div1" onclick="myFunDiv1()"> 
+        <p>DIV1</p>
+    <div class="outer" id="div2" onclick="myFunDiv2()">
+        <p>DIV2</p>
+        <div class="inner" id="div3" onclick="myFunDiv3()">
+            <p>DIV3</p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+.container{
+    border:solid black;
+    height: 500px auto;
+    /* overflow: scroll; */
+}
+button{
+    background-color: lightblue;
+}
+.name{
+    border: solid green;
+    margin: 30px;
+    margin-left: 400px;
+    height: 400px;
+    width: 300px;
+    overflow: scroll;
+}
+p{
+    color: blue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

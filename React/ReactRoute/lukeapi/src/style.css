@@ -1,0 +1,33 @@
+.container-fluid{
+    border:solid black;
+    height: 600px;
+    padding: 70px;
+    width: 100%;
+    background-image: url(./starwars.jpg);
+    /* overflow: scroll; */
+}
+button{
+    background-color: lightblue;
+}
+.name{
+    border: solid green;
+    margin: 30px;
+    margin-left: 400px;
+    height: 400px;
+    width: 300px;
+    overflow: scroll;
+}
+p{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.col-4{
+    margin: 20px;
+    border: solid green;
+    text-align: left;
+    width: 300px;
+}
+.text{
+    color: white;
+}

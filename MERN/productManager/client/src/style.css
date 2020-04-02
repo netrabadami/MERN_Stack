@@ -1,0 +1,10 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container-fluid{
+    height: 600px;
+    background-color:black;
+    padding: 30px;
+}
+

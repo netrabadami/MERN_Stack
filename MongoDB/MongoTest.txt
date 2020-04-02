@@ -1,0 +1,27 @@
+db.students.insert({name:"Donald",home_state:"CA",lucky_number:2, birthday:[{month:8},{day:13},{year:1990}]})
+db.students.insert({name:"Daisy",home_state:"FL",lucky_number:6, birthday:[{month:2},{day:1},{year:1996}]})
+db.students.insert({name:"Mickey",home_state:"AZ",lucky_number:12, birthday:[{month:8},{day:1},{year:1980}]})
+db.students.insert({name:"Minnie",home_state:"SA",lucky_number:9, birthday:[{month:9},{day:24},{year:2000}]})
+db.students.insert({name:"scooby",home_state:"OH",lucky_number:7, birthday:[{month:7},{day:7},{year:1997}]})
+
+
+ db.students.find({home_state: {$in:["CA","SA"]}}).pretty()
+db.students.find({lucky_number:{$gt: 3}})
+db.students.find({lucky_number:{$lte:10}})
+db.students.find({lucky_number:{$gt:1,$lte:9}})
+
+db.students.update({},{$set: {interest:[Coding,brunch,MongoDB]}},false, true)
+
+db.students.update({},{$push:{interest: "Rock Climbing"}},false, true)
+db.students.update({name:"Donald"},{$push:{interest: "taxes"}})
+db.students.update({name:"Donald"},{$pull:{interest: "taxes"}})
+db.students.remove({home_state:"CA"})
+db.students.remove({name:"scooby"})
+db.students.remove({lucky_number :{$gt: 5}},true)
+
+db.students.update({},{$set: {number_of_belts:0}},false, true)
+db.students.update({},{$inc: {number_of_belts:1}},false, true)
+db.students.update({},{$rename: {number_of_belts:"belts_earned"}},false, true)
+db.students.update({},{$unset: {lucky_number:""}},false, true)
+db.students.update({},{$set: {creates_at:new Date()}},false, true)
+db.students.update({},{$set: {test_date:{$dateToString:{format: "%Y-%m-%d", date: new Date()}}}},false, true)
